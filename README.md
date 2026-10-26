@@ -25,6 +25,6 @@ npm start
 
 ## Deploy
 
-Import this repository into Vercel and use the detected Next.js defaults. The build command is `npm run build`; the output directory is managed by Next.js. No environment variables are required. For another Node.js host, use the production build and start commands above.
+Import this repository into Vercel, set the framework preset to **Next.js**, and set **Output Directory** to **Override** with the value `.next`. The build command is `npm run build`; no environment variables are required. For another Node.js host, use the production build and start commands above.
 
 Practice content lives in `data/`, question logic in `lib/`, and screens in `components/`.
