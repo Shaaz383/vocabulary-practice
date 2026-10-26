@@ -196,6 +196,6 @@ export function buildSentenceQuiz(levelKey: string): Question[] {
   let short = 0;
   (Object.keys(quota) as SType[]).forEach((t) => { const n = quota[t] || 0; short += n - take(t, n); });
   (["meaning", "reverse"] as SType[]).forEach((t) => { if (short > 0) short -= take(t, short); });
-  saveSeen(new Set([...Array.from(seen), ...Array.from(newSeen)]), SEEN_S, 1500);
+  saveSeen(seen, newSeen, SEEN_S, 1500);
   return shuffle(out).slice(0, SENT_TOTAL);
 }

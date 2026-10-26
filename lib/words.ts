@@ -149,6 +149,6 @@ export function buildWordQuiz(levelKey: string): Question[] {
   let short = 0;
   (Object.keys(quota) as WType[]).forEach((t) => { const n = quota[t] || 0; short += n - take(t, n); });
   (["meaning", "reverse"] as WType[]).forEach((t) => { if (short > 0) short -= take(t, short); });
-  saveSeen(new Set([...Array.from(seen), ...Array.from(newSeen)]), SEEN_W, 1500);
+  saveSeen(seen, newSeen, SEEN_W, 1500);
   return shuffle(out).slice(0, 30);
 }

@@ -18,10 +18,11 @@ export function loadSeen(key: string): Set<string | number> {
     return new Set();
   }
 }
-export function saveSeen(s: Set<string | number>, key: string, keep: number): void {
+export function saveSeen(seen: Set<string | number>, recent: Set<string | number>, key: string, keep: number): void {
   try {
     if (typeof window === "undefined") return;
-    window.localStorage.setItem(key, JSON.stringify(Array.from(s).slice(-keep)));
+    const ordered = [...Array.from(seen).filter((id) => !recent.has(id)), ...Array.from(recent)];
+    window.localStorage.setItem(key, JSON.stringify(ordered.slice(-keep)));
   } catch {
     /* storage can be blocked: the test still works without it */
   }

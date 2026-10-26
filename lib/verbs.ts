@@ -104,6 +104,6 @@ export function buildVerbQuiz(): Question[] {
   const enCands = VERBS.filter((v) => v.hi).map((v) => ({ id: "EN:" + v.v1, key: v.v1, v }));
   pick(enCands, QUOTA.en, ctx).forEach((c) => out.push(withVk(englishQ(c.v), c.v.v1)));
 
-  saveSeen(new Set([...Array.from(ctx.seen), ...Array.from(ctx.newSeen)]), SEEN_KEY, 300);
+  saveSeen(ctx.seen, ctx.newSeen, SEEN_KEY, 300);
   return shuffle(out);
 }

@@ -209,6 +209,8 @@
   .opts.wide{grid-template-columns:1fr}
   @media (max-width:640px){ .modes{grid-template-columns:1fr} }
   @media (max-width:560px){
+    .ticker{grid-template-columns:repeat(3,minmax(0,1fr))}
+    .ticker .vp{padding-inline:8px}
     .feats,.stats{grid-template-columns:1fr 1fr 1fr;gap:8px}
     .feat{padding:10px} .feat b{font-size:18px}
     .summary{grid-template-columns:1fr;justify-items:center;text-align:center}
