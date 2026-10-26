@@ -216,3 +216,12 @@
     .ring{width:58px;height:58px} .ring svg{width:58px;height:58px}
     .askrow{flex-direction:column}
   }
+  @media (max-width:640px){
+    .quiz-view.answered{padding-bottom:calc(84px + env(safe-area-inset-bottom, 0px))}
+    .quiz-view .card{scroll-margin-top:12px}
+    .quiz-actionbar{
+      position:fixed;z-index:20;inset-inline:0;bottom:0;padding:12px max(16px,env(safe-area-inset-right, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)) max(16px,env(safe-area-inset-left, 0px));
+      background:var(--surface);border-top:1px solid var(--line);box-shadow:var(--shadow)
+    }
+    .quiz-actionbar .btn{width:100%;min-height:52px}
+  }
